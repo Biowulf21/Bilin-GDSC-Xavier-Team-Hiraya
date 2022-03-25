@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
+import 'package:bilin/widgets/login_page_card.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class landingPage extends StatelessWidget {
   const landingPage({Key? key}) : super(key: key);
@@ -69,7 +71,7 @@ class landingPage extends StatelessWidget {
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height * 1,
-            color: Colors.red,
+            color: Colors.white,
             child: Row(
               children: [
                 Column(
@@ -78,7 +80,7 @@ class landingPage extends StatelessWidget {
                     Container(
                       color: Colors.white,
                       height: MediaQuery.of(context).size.height * 0.95,
-                      width: MediaQuery.of(context).size.width * 0.5,
+                      width: MediaQuery.of(context).size.width * 0.4,
                       alignment: Alignment.center,
                       child: Padding(
                         padding: const EdgeInsets.all(100),
@@ -132,17 +134,80 @@ class landingPage extends StatelessWidget {
                     )
                   ],
                 ),
-                Column(
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        height: MediaQuery.of(context).size.height * 0.95,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            color: Colors.blue,
+            height: MediaQuery.of(context).size.height * 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(50.0),
+                  child: Text(
+                    'How You Can Help',
+                    textAlign: TextAlign.center,
+                    style: landingPageBold,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      color: Colors.white,
-                      height: MediaQuery.of(context).size.height * 0.95,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                    )
+                    LandingPageCard(
+                      icon: Icons.pin,
+                    ),
+                    LandingPageCard(
+                      icon: MaterialCommunityIcons.box_cutter,
+                    ),
+                    LandingPageCard(
+                      icon: MaterialCommunityIcons.hand_peace,
+                    ),
+                    LandingPageCard(
+                      icon: MaterialCommunityIcons.heart_box,
+                    ),
                   ],
                 )
               ],
             ),
+          ),
+          Container(
+            color: Colors.amber,
+            height: MediaQuery.of(context).size.height * 1,
+            child: Row(children: [
+              Column(
+                children: <Widget>[
+                  Container(
+                    color: Colors.red,
+                    height: MediaQuery.of(context).size.height * 1,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Icon(
+                      MaterialCommunityIcons.globe_model,
+                      size: 600,
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Text("Title"),
+                  Text("Paragraph"),
+                ],
+              )
+            ]),
           ),
         ],
       ),
