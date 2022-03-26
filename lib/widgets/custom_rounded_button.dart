@@ -17,20 +17,24 @@ class CustomRoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => onTap,
-      child: Container(
-        height: 50,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-          child: Text(
-            text,
-            style: textStyle ?? defaultTextStyle,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () => onTap,
+        child: Container(
+          height: 50,
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            child: Text(
+              text,
+              style: textStyle ?? defaultTextStyle,
+            ),
           ),
-        ),
-        decoration: BoxDecoration(
-          color: colour,
-          borderRadius: BorderRadius.circular(10),
+          decoration: BoxDecoration(
+            color: colour,
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ),
     );
