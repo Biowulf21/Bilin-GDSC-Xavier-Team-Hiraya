@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
                   color: bilinGreen,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        left: 60.0, top: 30.0, bottom: 30.0),
+                        left: 60.0, top: 20.0, bottom: 30.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
                           "Welcome to Bilin",
                           style: h2,
                         ),
-                        SizedBox(height: 50),
+                        SizedBox(height: 25),
                         Divider(
                           endIndent: MediaQuery.of(context).size.width * 0.4,
                           color: Colors.white,
@@ -71,6 +71,7 @@ class LoginPage extends StatelessWidget {
                                 child: CustomRoundedButton(
                                   onTap: () {},
                                   text: "Sign Up as Partner",
+                                  textStyle: h3,
                                   colour: bilinGreen,
                                   width: 300,
                                   height: 60,
@@ -79,6 +80,22 @@ class LoginPage extends StatelessWidget {
                                   borderWidth: 5,
                                 ),
                               ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Flexible(
+                                child: CustomRoundedButton(
+                                  onTap: () {},
+                                  text: "Sign Up as Donor",
+                                  textStyle: h3,
+                                  colour: bilinGreen,
+                                  width: 300,
+                                  height: 60,
+                                  borderColour: Colors.white,
+                                  roundness: 50,
+                                  borderWidth: 5,
+                                ),
+                              )
                             ],
                           ),
                         )
@@ -94,57 +111,59 @@ class LoginPage extends StatelessWidget {
                   color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.all(40.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Log In",
-                          style: h2.copyWith(
-                              color: Colors.black, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
-                        customTextField(
-                            isHidden: false,
-                            contoller: usernameController,
-                            labelText: "Username",
-                            prefixIcon: Icons.person,
-                            usernameController: usernameController),
-                        customTextField(
-                            contoller: passwordController,
-                            isHidden: true,
-                            labelText: "Password",
-                            prefixIcon: Icons.lock,
-                            usernameController: usernameController),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        CustomRoundedButton(
-                          onTap: () {},
-                          text: "Login",
-                          colour: bilinGreen,
-                          height: 60,
-                          width: 300,
-                          roundness: 50,
-                          borderWidth: 5,
-                          textStyle:
-                              TextStyle(fontSize: 25, color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            child: Text("Forgot Password?"),
-                            onTap: () {},
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Log In",
+                            style: h2.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            height: 40.0,
+                          ),
+                          const SizedBox(
+                            height: 15.0,
+                          ),
+                          customTextField(
+                              isHidden: false,
+                              contoller: usernameController,
+                              labelText: "Username",
+                              prefixIcon: Icons.person,
+                              usernameController: usernameController),
+                          customTextField(
+                              contoller: passwordController,
+                              isHidden: true,
+                              labelText: "Password",
+                              prefixIcon: Icons.lock,
+                              usernameController: usernameController),
+                          const SizedBox(
+                            height: 40.0,
+                          ),
+                          CustomRoundedButton(
+                            onTap: () {},
+                            text: "Login",
+                            colour: bilinGreen,
+                            height: 60,
+                            width: 300,
+                            roundness: 50,
+                            borderWidth: 5,
+                            textStyle: h3,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              child: Text("Forgot Password?"),
+                              onTap: () {},
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
