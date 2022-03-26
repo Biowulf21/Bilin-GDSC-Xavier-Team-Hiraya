@@ -2,18 +2,30 @@ import 'package:flutter/material.dart';
 
 class CustomRoundedButton extends StatelessWidget {
   CustomRoundedButton(
-      {required this.onTap,
+      {this.height,
+      this.width,
+      required this.onTap,
       required this.text,
       required this.colour,
+      this.borderColour,
+      this.borderWidth,
       this.textStyle,
+      this.roundness,
+      this.textSize,
       Key? key})
       : super(key: key);
 
   final String text;
   final VoidCallback onTap;
   final Color colour;
+  final Color? borderColour;
   final TextStyle? textStyle;
-  final TextStyle? defaultTextStyle = TextStyle(fontSize: 10);
+  final double? height;
+  final double? width;
+  final double? roundness;
+  final double? textSize;
+  final TextStyle? defaultTextStyle = TextStyle(fontSize: 20);
+  final double? borderWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +34,24 @@ class CustomRoundedButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 50,
+          height: height ?? 50,
+          width: width ?? 80,
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-            child: Text(
-              text,
-              style: textStyle ?? defaultTextStyle,
+            child: Center(
+              child: Text(
+                text,
+                style: textStyle ?? defaultTextStyle,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           decoration: BoxDecoration(
+            border: Border.all(
+                color: borderColour ?? colour, width: borderWidth ?? 5),
             color: colour,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(roundness ?? 10),
           ),
         ),
       ),

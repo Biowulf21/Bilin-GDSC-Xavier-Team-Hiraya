@@ -1,3 +1,4 @@
+import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,56 @@ class LoginPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.5,
                   height: MediaQuery.of(context).size.height * 1,
                   color: bilinGreen,
-                  child: Column(
-                    children: const <Widget>[],
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 60.0, top: 30.0, bottom: 30.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Welcome to Bilin",
+                          style: h2,
+                        ),
+                        SizedBox(height: 50),
+                        Divider(
+                          endIndent: MediaQuery.of(context).size.width * 0.4,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                          width: 415,
+                          child: Text(
+                            "Bilin is a platform that makes the donation process easier, allowing forward-thinking people and businesses to connect with nonprofits and community pantries that need their help the most.",
+                            style: landingPageParagraph.copyWith(
+                                color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Center(
+                          child: Row(
+                            children: <Widget>[
+                              Flexible(
+                                child: CustomRoundedButton(
+                                  onTap: () {},
+                                  text: "Sign Up as Partner",
+                                  colour: bilinGreen,
+                                  width: 300,
+                                  height: 60,
+                                  borderColour: Colors.white,
+                                  roundness: 50,
+                                  borderWidth: 5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -48,10 +97,11 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Text("Log In"),
-                        // Divider(
-                        //   endIndent: MediaQuery.of(context).size.width * 0.4,
-                        // ),
+                        Text(
+                          "Log In",
+                          style: h2.copyWith(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
                         const SizedBox(
                           height: 40.0,
                         ),
@@ -74,7 +124,26 @@ class LoginPage extends StatelessWidget {
                           height: 40.0,
                         ),
                         CustomRoundedButton(
-                            onTap: () {}, text: "login", colour: bilinGreen)
+                          onTap: () {},
+                          text: "Login",
+                          colour: bilinGreen,
+                          height: 60,
+                          width: 300,
+                          roundness: 50,
+                          borderWidth: 5,
+                          textStyle:
+                              TextStyle(fontSize: 25, color: Colors.white),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            child: Text("Forgot Password?"),
+                            onTap: () {},
+                          ),
+                        )
                       ],
                     ),
                   ),
