@@ -1,3 +1,4 @@
+import 'package:bilin/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
@@ -68,8 +69,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         isLandingPage
             ? CustomRoundedButton(
                 onTap: () {
-                  // Navigator.pushNamed(context, LoginPage.id);
-                  // print('going to login page');
+                  Navigator.pushNamed(context, LoginPage.id);
+                  print('going to login page');
                 },
                 text: "Login",
                 colour: Colors.white,

@@ -5,6 +5,7 @@ import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:bilin/widgets/login_page_card.dart';
+import 'package:bilin/widgets/custom_app_bar.dart';
 
 class landingPage extends StatelessWidget {
   const landingPage({Key? key}) : super(key: key);
@@ -13,7 +14,9 @@ class landingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(
+        isLandingPage: true,
+      ),
       body: ListView(
         children: <Widget>[
           Container(
@@ -382,87 +385,4 @@ class landingPage extends StatelessWidget {
       ),
     );
   }
-}
-
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({
-    Key? key,
-  }) : super(key: key);
-  @override
-  Size get PreferredSize => Size.fromHeight(kToolbarHeight);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text(
-        'Bilin',
-        style: appBarTexStyle,
-      ),
-      backgroundColor: Colors.white,
-      actions: <Widget>[
-        TextButton(
-          onPressed: () {},
-          child: const Text(
-            'Home',
-            style: appBarTexStyle,
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text(
-            'Get Involved',
-            style: appBarTexStyle,
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text(
-            'Knowledge Hub',
-            style: appBarTexStyle,
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text(
-            'About Us',
-            style: appBarTexStyle,
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text(
-            'FAQ',
-            style: appBarTexStyle,
-          ),
-        ),
-        Container(
-          width: MediaQuery.of(context).size.width * 0.3,
-          color: Colors.white,
-        ),
-        // TextButton(
-        //   onPressed: () {},
-        //   child: const Text(
-        //     "Login",
-        //     style: TextStyle(fontSize: 20, color: Colors.black),
-        //   ),
-        // ),
-        CustomRoundedButton(
-          onTap: () {
-            Navigator.pushNamed(context, LoginPage.id);
-            print('going to login page');
-          },
-          text: "Login",
-          colour: Colors.white,
-          textStyle: TextStyle(color: Colors.black, fontSize: 20.0),
-        ),
-        SizedBox(
-          width: 40,
-        ),
-      ],
-    );
-  }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
