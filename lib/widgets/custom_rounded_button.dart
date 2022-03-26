@@ -20,7 +20,7 @@ class CustomRoundedButton extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () => onTap,
+        onTap: onTap,
         child: Container(
           height: 50,
           child: Padding(

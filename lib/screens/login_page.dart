@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/constants/constants_text_styles.dart';
 
 class LoginPage extends StatelessWidget {
   static String id = "login_page";
@@ -12,15 +14,27 @@ class LoginPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 1,
-              color: Colors.green,
+            Expanded(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.height * 1,
+                color: bilinGreen,
+                child: Column(
+                  children: <Widget>[],
+                ),
+              ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 1,
-              color: Colors.green,
+            Expanded(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.height * 1,
+                color: Colors.white,
+                child: Center(
+                  child: Column(
+                    children: <Widget>[Text("Log In")],
+                  ),
+                ),
+              ),
             )
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:bilin/screens/landing_page.dart';
+import 'package:bilin/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/screens/home.dart';
 
@@ -20,6 +21,7 @@ class _BilinState extends State<Bilin> {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const landingPage(),
+        LoginPage.id: (context) => const LoginPage(),
         //landingPage.id: (context) => const landingPage(),
       },
     );
