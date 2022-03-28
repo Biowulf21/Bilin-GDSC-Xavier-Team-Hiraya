@@ -4,11 +4,26 @@ import 'package:bilin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 
-class LoginWidget extends StatelessWidget {
-  LoginWidget({Key? key}) : super(key: key);
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({Key? key}) : super(key: key);
 
+  @override
+  State<LoginWidget> createState() => _LoginWidgetState();
+}
+
+class _LoginWidgetState extends State<LoginWidget> {
   TextEditingController usernameController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    usernameController.dispose();
+    passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,15 +81,32 @@ class LoginWidget extends StatelessWidget {
 
 enum Partner { NonProfit, Business }
 
-class PartnerSignupWidget extends StatelessWidget {
-  PartnerSignupWidget({this.chosenPartnerType, Key? key}) : super(key: key);
+class PartnerSignupWidget extends StatefulWidget {
+  const PartnerSignupWidget({this.chosenPartnerType, Key? key})
+      : super(key: key);
 
-  final Partner? _partnerNonProf = Partner.NonProfit;
-  final Partner? _partnerBusiness = Partner.NonProfit;
   final Partner? chosenPartnerType;
 
+  @override
+  State<PartnerSignupWidget> createState() => _PartnerSignupWidgetState();
+}
+
+class _PartnerSignupWidgetState extends State<PartnerSignupWidget> {
+  final Partner? _partnerNonProf = Partner.NonProfit;
+
+  final Partner? _partnerBusiness = Partner.NonProfit;
+
   final TextEditingController _email = TextEditingController();
+
   final TextEditingController _phoneNumber = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _email.dispose();
+    _phoneNumber.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +130,7 @@ class PartnerSignupWidget extends StatelessWidget {
                     title: const Text("Nonprofit Org"),
                     leading: Radio(
                         value: Partner.NonProfit,
-                        groupValue: chosenPartnerType,
+                        groupValue: widget.chosenPartnerType,
                         onChanged: (Partner? value) {}),
                   ),
                 ),
@@ -107,7 +139,7 @@ class PartnerSignupWidget extends StatelessWidget {
                     title: const Text("Business"),
                     leading: Radio(
                         value: Partner.Business,
-                        groupValue: chosenPartnerType,
+                        groupValue: widget.chosenPartnerType,
                         onChanged: (Partner? value) {}),
                   ),
                 ),
@@ -190,15 +222,38 @@ class HaveAccountWidget extends StatelessWidget {
   }
 }
 
-class DonorSignUpWidget extends StatelessWidget {
-  DonorSignUpWidget({Key? key}) : super(key: key);
+class DonorSignUpWidget extends StatefulWidget {
+  const DonorSignUpWidget({Key? key}) : super(key: key);
 
+  @override
+  State<DonorSignUpWidget> createState() => _DonorSignUpWidgetState();
+}
+
+class _DonorSignUpWidgetState extends State<DonorSignUpWidget> {
   final TextEditingController _username = TextEditingController();
+
   final TextEditingController _fullName = TextEditingController();
+
   final TextEditingController _email = TextEditingController();
+
   final TextEditingController _phoneNumber = TextEditingController();
+
   final TextEditingController _password = TextEditingController();
+
   final TextEditingController _confirmPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+
+    _username.dispose();
+    _fullName.dispose();
+    _email.dispose();
+    _phoneNumber.dispose();
+    _password.dispose();
+    _password.dispose();
+    _confirmPassword.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
