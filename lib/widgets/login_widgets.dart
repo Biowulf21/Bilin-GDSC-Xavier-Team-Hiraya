@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/screens/signup_donor.dart';
+import 'package:bilin/screens/signup_partner.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -371,6 +373,7 @@ class _WelcomeToBilinWidgetState extends State<WelcomeToBilinWidget> {
                         onTap: () {
                           setState(() {
                             log("Going to partner page");
+                            Navigator.pushNamed(context, SignUpPartnerPage.id);
                           });
                         },
                         text: "Sign Up as our Partner",
@@ -389,6 +392,7 @@ class _WelcomeToBilinWidgetState extends State<WelcomeToBilinWidget> {
                         onTap: () {
                           setState(() {
                             log("Going to donor page");
+                            Navigator.pushNamed(context, SignUpDonorPage.id);
                           });
                         },
                         text: "Sign Up as Donor",

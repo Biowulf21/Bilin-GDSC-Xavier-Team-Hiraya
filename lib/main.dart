@@ -1,6 +1,8 @@
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/screens/landing_page.dart';
 import 'package:bilin/screens/login_page.dart';
+import 'package:bilin/screens/signup_donor.dart';
+import 'package:bilin/screens/signup_partner.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/screens/home.dart';
 
@@ -25,7 +27,8 @@ class _BilinState extends State<Bilin> {
       routes: {
         '/': (context) => const landingPage(),
         LoginPage.id: (context) => const LoginPage(),
-        //landingPage.id: (context) => const landingPage(),
+        SignUpDonorPage.id: (context) => const SignUpDonorPage(),
+        SignUpPartnerPage.id: (context) => const SignUpPartnerPage()
       },
     );
   }

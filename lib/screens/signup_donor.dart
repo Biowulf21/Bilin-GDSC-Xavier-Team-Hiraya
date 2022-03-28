@@ -5,7 +5,7 @@ import 'package:bilin/widgets/login_widgets.dart';
 class SignUpDonorPage extends StatefulWidget {
   const SignUpDonorPage({Key? key}) : super(key: key);
 
-  static const String = "signup_donor";
+  static const id = "signup_donor";
 
   @override
   State<SignUpDonorPage> createState() => _SignUpDonorPageState();
