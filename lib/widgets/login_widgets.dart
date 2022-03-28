@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/widgets/custom_text_field.dart';
@@ -306,8 +308,9 @@ class _DonorSignUpWidgetState extends State<DonorSignUpWidget> {
   }
 }
 
-class WelcomeToBilinWidget extends StatelessWidget {
+class WelcomeToBilinWidget extends StatefulWidget {
   WelcomeToBilinWidget({
+    required this.onPress,
     this.header,
     this.paragraph,
     Key? key,
@@ -315,7 +318,13 @@ class WelcomeToBilinWidget extends StatelessWidget {
 
   String? paragraph;
   String? header;
+  VoidCallback onPress;
 
+  @override
+  State<WelcomeToBilinWidget> createState() => _WelcomeToBilinWidgetState();
+}
+
+class _WelcomeToBilinWidgetState extends State<WelcomeToBilinWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -332,7 +341,7 @@ class WelcomeToBilinWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    header ?? "",
+                    widget.header ?? "",
                     style: landingPageBold.copyWith(color: Colors.white),
                   ),
                   const Padding(
@@ -348,7 +357,7 @@ class WelcomeToBilinWidget extends StatelessWidget {
                     child: SizedBox(
                       width: 600,
                       child: Text(
-                        paragraph ?? "",
+                        widget.paragraph ?? "",
                         style:
                             landingPageParagraph.copyWith(color: Colors.white),
                         textAlign: TextAlign.justify,
@@ -359,7 +368,11 @@ class WelcomeToBilinWidget extends StatelessWidget {
                   Wrap(
                     children: <Widget>[
                       CustomRoundedButton(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            log("Going to partner page");
+                          });
+                        },
                         text: "Sign Up as our Partner",
                         textStyle:
                             landingPageParagraph.copyWith(color: Colors.white),
@@ -373,7 +386,11 @@ class WelcomeToBilinWidget extends StatelessWidget {
                         width: 20,
                       ),
                       CustomRoundedButton(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            log("Going to donor page");
+                          });
+                        },
                         text: "Sign Up as Donor",
                         textStyle:
                             landingPageParagraph.copyWith(color: Colors.white),

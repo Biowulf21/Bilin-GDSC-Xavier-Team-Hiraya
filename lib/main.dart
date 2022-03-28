@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:bilin/screens/home.dart';
 
 void main(List<String> args) {
-  runApp(Bilin());
+  runApp(const Bilin());
 }
 
 class Bilin extends StatefulWidget {
@@ -24,7 +24,7 @@ class _BilinState extends State<Bilin> {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const landingPage(),
-        LoginPage.id: (context) => LoginPage(),
+        LoginPage.id: (context) => const LoginPage(),
         //landingPage.id: (context) => const landingPage(),
       },
     );

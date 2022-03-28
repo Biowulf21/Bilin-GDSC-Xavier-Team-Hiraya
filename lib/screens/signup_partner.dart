@@ -1,30 +1,17 @@
-import 'package:bilin/constants/constants_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/widgets/login_widgets.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPartnerPage extends StatefulWidget {
+  const SignUpPartnerPage({Key? key}) : super(key: key);
 
-  static String id = "login_page";
+  static const String id = "signup_partner";
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPartnerPage> createState() => _SignUpPartnerPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final PageController _desc = PageController();
-
-  final PageController _forms = PageController();
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-
-    _desc.dispose();
-    _forms.dispose();
-  }
-
+class _SignUpPartnerPageState extends State<SignUpPartnerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           Expanded(
             child: Container(
               color: Colors.white,
-              child: const LoginWidget(),
+              child: const SignUpPartnerPage(),
             ),
           )
         ],
