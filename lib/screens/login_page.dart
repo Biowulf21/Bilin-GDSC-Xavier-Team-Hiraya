@@ -99,7 +99,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               color: Colors.white,
               child: PageView(
-                children: const [PartnerSignupWidget()],
+                children: [PartnerSignupWidget()],
               ),
             ),
           )
