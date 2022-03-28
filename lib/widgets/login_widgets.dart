@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/screens/dashboard.dart';
 import 'package:bilin/screens/signup_donor.dart';
 import 'package:bilin/screens/signup_partner.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
@@ -61,7 +62,10 @@ class _LoginWidgetState extends State<LoginWidget> {
               height: 20.0,
             ),
             CustomRoundedButton(
-              onTap: () {},
+              onTap: () {
+                log('Loggin in');
+                Navigator.of(context).pushNamed(Dashboard.id);
+              },
               text: "Login",
               textStyle: h2.copyWith(color: Colors.white),
               colour: bilinGreen,
@@ -373,7 +377,8 @@ class _WelcomeToBilinWidgetState extends State<WelcomeToBilinWidget> {
                         onTap: () {
                           setState(() {
                             log("Going to partner page");
-                            Navigator.pushNamed(context, SignUpPartnerPage.id);
+                            Navigator.of(context)
+                                .pushNamed(SignUpPartnerPage.id);
                           });
                         },
                         text: "Sign Up as our Partner",
@@ -392,7 +397,7 @@ class _WelcomeToBilinWidgetState extends State<WelcomeToBilinWidget> {
                         onTap: () {
                           setState(() {
                             log("Going to donor page");
-                            Navigator.pushNamed(context, SignUpDonorPage.id);
+                            Navigator.of(context).pushNamed(SignUpDonorPage.id);
                           });
                         },
                         text: "Sign Up as Donor",

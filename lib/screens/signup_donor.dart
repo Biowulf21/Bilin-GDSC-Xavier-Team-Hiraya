@@ -1,3 +1,4 @@
+import 'package:bilin/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/widgets/login_widgets.dart';
@@ -5,7 +6,7 @@ import 'package:bilin/widgets/login_widgets.dart';
 class SignUpDonorPage extends StatefulWidget {
   const SignUpDonorPage({Key? key}) : super(key: key);
 
-  static const id = "signup_donor";
+  static const id = "/signup_donor";
 
   @override
   State<SignUpDonorPage> createState() => _SignUpDonorPageState();
@@ -15,6 +16,7 @@ class _SignUpDonorPageState extends State<SignUpDonorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MyAppBar(isLandingPage: false),
       body: Row(
         children: [
           Expanded(

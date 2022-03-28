@@ -5,7 +5,7 @@ import 'package:bilin/widgets/login_widgets.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  static String id = "login_page";
+  static String id = "/login_page";
 
   @override
   State<LoginPage> createState() => _LoginPageState();

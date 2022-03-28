@@ -9,7 +9,7 @@ import 'package:bilin/widgets/custom_app_bar.dart';
 
 class landingPage extends StatelessWidget {
   const landingPage({Key? key}) : super(key: key);
-  static String id = 'landingPage';
+  static String id = '/landingPage';
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +176,7 @@ class landingPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.symmetric(vertical: 40.0),
                         child: Text(
                           "Our Mission",
@@ -197,13 +197,13 @@ class landingPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Column(
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Text('19'),
                                 Text("Partnered with Us"),
                               ],
                             ),
                             Column(
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Text('19'),
                                 Text("Partnered with Us"),
                               ],
@@ -367,12 +367,12 @@ class landingPage extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text("Lorem Ipsum"),
                       Text("Lorem Ipsum"),
                     ],

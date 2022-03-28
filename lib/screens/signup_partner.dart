@@ -1,3 +1,4 @@
+import 'package:bilin/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/widgets/login_widgets.dart';
@@ -5,7 +6,7 @@ import 'package:bilin/widgets/login_widgets.dart';
 class SignUpPartnerPage extends StatefulWidget {
   const SignUpPartnerPage({Key? key}) : super(key: key);
 
-  static const String id = "signup_partner";
+  static const String id = "/signup_partner";
 
   @override
   State<SignUpPartnerPage> createState() => _SignUpPartnerPageState();
@@ -15,6 +16,7 @@ class _SignUpPartnerPageState extends State<SignUpPartnerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MyAppBar(isLandingPage: false),
       body: Row(
         children: [
           Expanded(
