@@ -74,11 +74,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 },
                 text: "Login",
                 colour: Colors.white,
-                textStyle: TextStyle(color: Colors.black, fontSize: 20.0),
+                textStyle: const TextStyle(color: Colors.black, fontSize: 20.0),
               )
             : CustomRoundedButton(
                 onTap: () {}, text: " ", colour: Colors.transparent),
-        SizedBox(
+        const SizedBox(
           width: 40,
         ),
       ],
@@ -87,5 +87,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

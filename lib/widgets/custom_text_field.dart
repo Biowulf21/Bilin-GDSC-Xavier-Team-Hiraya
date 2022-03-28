@@ -9,7 +9,6 @@ class customTextField extends StatelessWidget {
     this.prefixIcon,
     required this.isHidden,
     required this.contoller,
-    required this.usernameController,
   }) : super(key: key);
 
   final TextEditingController contoller;
@@ -17,7 +16,6 @@ class customTextField extends StatelessWidget {
   final String? labelText;
   final String? hintText;
   final bool? isHidden;
-  final TextEditingController usernameController;
 
   @override
   Widget build(BuildContext context) {
