@@ -18,8 +18,10 @@ const TextStyle cardTitle =
 const TextStyle cardDesc = TextStyle(
   fontSize: 25,
 );
+const TextStyle h1 =
+    TextStyle(fontSize: 50.0, color: Colors.white, fontWeight: FontWeight.bold);
 
-const TextStyle h2 = TextStyle(fontSize: 30, color: Colors.white);
+const TextStyle h2 = TextStyle(fontSize: 30.0, color: Colors.white);
 
 const TextStyle h3 =
     TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700);

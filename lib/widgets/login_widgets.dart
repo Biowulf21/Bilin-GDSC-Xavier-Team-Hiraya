@@ -20,7 +20,7 @@ class LoginWidget extends StatelessWidget {
           children: <Widget>[
             Text(
               'Login',
-              style: h2.copyWith(color: Colors.black),
+              style: h1.copyWith(color: Colors.black),
             ),
             const SizedBox(
               height: 20.0,
@@ -38,6 +38,9 @@ class LoginWidget extends StatelessWidget {
               contoller: usernameController,
               labelText: "Password",
             ),
+            const SizedBox(
+              height: 20.0,
+            ),
             CustomRoundedButton(
               onTap: () {},
               text: "Login",
@@ -46,7 +49,14 @@ class LoginWidget extends StatelessWidget {
               height: 70,
               width: 300,
               roundness: 50.0,
-            )
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            HaveAccountWidget(
+                question: "Don't have an account?",
+                clickableText: "Sign Up",
+                onTap: () {})
           ],
         ),
       ),
@@ -76,7 +86,7 @@ class PartnerSignupWidget extends StatelessWidget {
           children: <Widget>[
             Text(
               'SignUp as Partner',
-              style: h2.copyWith(color: Colors.black),
+              style: h1.copyWith(color: Colors.black),
             ),
             const SizedBox(
               height: 20.0,
@@ -176,6 +186,156 @@ class HaveAccountWidget extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class DonorSignUpWidget extends StatelessWidget {
+  DonorSignUpWidget({Key? key}) : super(key: key);
+
+  final TextEditingController _username = TextEditingController();
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _phoneNumber = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _confirmPassword = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            customTextField(
+                labelText: "Username", isHidden: false, contoller: _username),
+            const SizedBox(height: 10.0),
+            customTextField(
+                labelText: "Full Name", isHidden: false, contoller: _fullName),
+            const SizedBox(height: 10.0),
+            customTextField(
+                labelText: "Email Address", isHidden: false, contoller: _email),
+            const SizedBox(height: 10.0),
+            customTextField(
+                labelText: "Phone Number",
+                isHidden: false,
+                contoller: _phoneNumber),
+            const SizedBox(height: 10.0),
+            customTextField(
+                labelText: "Password", isHidden: false, contoller: _password),
+            const SizedBox(height: 10.0),
+            customTextField(
+                labelText: "Confirm Password",
+                isHidden: false,
+                contoller: _confirmPassword),
+            const SizedBox(height: 20.0),
+            CustomRoundedButton(
+              onTap: () {},
+              text: "Sign Up",
+              textStyle: h2.copyWith(color: Colors.white),
+              colour: bilinGreen,
+              height: 70,
+              width: 300,
+              roundness: 50.0,
+            ),
+            const SizedBox(height: 20.0),
+            HaveAccountWidget(
+                question: "Already have an account?",
+                clickableText: "Log in",
+                onTap: () {})
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WelcomeToBilinWidget extends StatelessWidget {
+  WelcomeToBilinWidget({
+    this.header,
+    this.paragraph,
+    Key? key,
+  }) : super(key: key);
+
+  String? paragraph;
+  String? header;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            width: 800,
+            height: 600,
+            color: bilinGreen,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    header ?? "",
+                    style: landingPageBold.copyWith(color: Colors.white),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                    child: Divider(
+                      endIndent: 600,
+                      color: Colors.white,
+                      thickness: 4,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                    child: SizedBox(
+                      width: 600,
+                      child: Text(
+                        paragraph ?? "",
+                        style:
+                            landingPageParagraph.copyWith(color: Colors.white),
+                        textAlign: TextAlign.justify,
+                        softWrap: true,
+                      ),
+                    ),
+                  ),
+                  Wrap(
+                    children: <Widget>[
+                      CustomRoundedButton(
+                        onTap: () {},
+                        text: "Sign Up as our Partner",
+                        textStyle:
+                            landingPageParagraph.copyWith(color: Colors.white),
+                        colour: bilinGreen,
+                        width: 300,
+                        height: 70,
+                        borderColour: Colors.white,
+                        roundness: 50,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      CustomRoundedButton(
+                        onTap: () {},
+                        text: "Sign Up as Donor",
+                        textStyle:
+                            landingPageParagraph.copyWith(color: Colors.white),
+                        colour: bilinGreen,
+                        width: 300,
+                        height: 70,
+                        borderColour: Colors.white,
+                        roundness: 50,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
