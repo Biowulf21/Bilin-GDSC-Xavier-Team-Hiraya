@@ -1,4 +1,5 @@
 import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/screens/dashboard.dart';
 import 'package:bilin/screens/events_page.dart';
 import 'package:bilin/screens/landing_page.dart';
 import 'package:bilin/screens/login_page.dart';
@@ -29,6 +30,7 @@ class _BilinState extends State<Bilin> {
         LoginPage.id: (context) => const LoginPage(),
         SignUpDonorPage.id: (context) => const SignUpDonorPage(),
         SignUpPartnerPage.id: (context) => const SignUpPartnerPage(),
+        Dashboard.id: (context) => const Dashboard(),
         EventsPage.id: (context) => const EventsPage()
       },
     );

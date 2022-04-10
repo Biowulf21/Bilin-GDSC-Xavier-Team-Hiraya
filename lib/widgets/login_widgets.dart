@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:bilin/constants/constants_colors.dart';
-import 'package:bilin/screens/events_page.dart';
+import 'package:bilin/screens/dashboard.dart';
 import 'package:bilin/screens/signup_donor.dart';
 import 'package:bilin/screens/signup_partner.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
@@ -64,7 +64,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             CustomRoundedButton(
               onTap: () {
                 log('Loggin in');
-                Navigator.of(context).pushNamed(EventsPage.id);
+                Navigator.of(context).pushNamed(Dashboard.id);
               },
               text: "Login",
               textStyle: h2.copyWith(color: Colors.white),

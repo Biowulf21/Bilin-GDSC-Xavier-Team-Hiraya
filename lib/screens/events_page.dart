@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class EventsPage extends StatefulWidget {
   const EventsPage({Key? key}) : super(key: key);
 
-  static const String id = "/dashboard";
+  static const String id = "/events-page";
 
   @override
   State<EventsPage> createState() => _EventsPageState();
