@@ -1,9 +1,14 @@
+import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/screens/dashboard.dart';
 import 'package:bilin/screens/landing_page.dart';
+import 'package:bilin/screens/login_page.dart';
+import 'package:bilin/screens/signup_donor.dart';
+import 'package:bilin/screens/signup_partner.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/screens/home.dart';
 
 void main(List<String> args) {
-  runApp(Bilin());
+  runApp(const Bilin());
 }
 
 class Bilin extends StatefulWidget {
@@ -17,10 +22,15 @@ class _BilinState extends State<Bilin> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData().copyWith(
+          colorScheme: ThemeData().colorScheme.copyWith(primary: bilinGreen)),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const landingPage(),
-        //landingPage.id: (context) => const landingPage(),
+        LoginPage.id: (context) => const LoginPage(),
+        SignUpDonorPage.id: (context) => const SignUpDonorPage(),
+        SignUpPartnerPage.id: (context) => const SignUpPartnerPage(),
+        Dashboard.id: (context) => const Dashboard()
       },
     );
   }

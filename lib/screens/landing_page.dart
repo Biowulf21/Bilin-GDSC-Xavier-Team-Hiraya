@@ -1,80 +1,21 @@
+import 'package:bilin/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:bilin/widgets/login_page_card.dart';
+import 'package:bilin/widgets/custom_app_bar.dart';
 
 class landingPage extends StatelessWidget {
   const landingPage({Key? key}) : super(key: key);
-  static String id = 'landingPage';
+  static String id = '/landingPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Bilin',
-          style: appBarTexStyle,
-        ),
-        backgroundColor: Colors.white,
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Home',
-              style: appBarTexStyle,
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Get Involved',
-              style: appBarTexStyle,
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Knowledge Hub',
-              style: appBarTexStyle,
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'About Us',
-              style: appBarTexStyle,
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'FAQ',
-              style: appBarTexStyle,
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.3,
-            color: Colors.white,
-          ),
-          // TextButton(
-          //   onPressed: () {},
-          //   child: const Text(
-          //     "Login",
-          //     style: TextStyle(fontSize: 20, color: Colors.black),
-          //   ),
-          // ),
-          CustomRoundedButton(
-            onTap: () {},
-            text: "Login",
-            colour: Colors.white,
-            textStyle: TextStyle(color: Colors.black, fontSize: 20.0),
-          ),
-          SizedBox(
-            width: 40,
-          ),
-        ],
+      appBar: MyAppBar(
+        isLandingPage: true,
       ),
       body: ListView(
         children: <Widget>[
@@ -235,7 +176,7 @@ class landingPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.symmetric(vertical: 40.0),
                         child: Text(
                           "Our Mission",
@@ -256,13 +197,13 @@ class landingPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Column(
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Text('19'),
                                 Text("Partnered with Us"),
                               ],
                             ),
                             Column(
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Text('19'),
                                 Text("Partnered with Us"),
                               ],
@@ -426,12 +367,12 @@ class landingPage extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text("Lorem Ipsum"),
                       Text("Lorem Ipsum"),
                     ],

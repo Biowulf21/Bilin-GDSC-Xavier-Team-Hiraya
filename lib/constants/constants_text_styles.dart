@@ -6,7 +6,8 @@ const TextStyle appBarTexStyle = TextStyle(fontSize: 20.0, color: Colors.black);
 const TextStyle landingPageBold =
     TextStyle(fontSize: 100, fontWeight: FontWeight.bold);
 
-const TextStyle landingPageParagraph = TextStyle(fontSize: 20);
+const TextStyle landingPageParagraph =
+    TextStyle(fontSize: 20, fontWeight: FontWeight.w300);
 
 const TextStyle customButtonTextStyle = TextStyle(fontSize: 20.0);
 
@@ -17,8 +18,10 @@ const TextStyle cardTitle =
 const TextStyle cardDesc = TextStyle(
   fontSize: 25,
 );
+const TextStyle h1 =
+    TextStyle(fontSize: 50.0, color: Colors.white, fontWeight: FontWeight.bold);
 
-const TextStyle h2 = TextStyle(fontSize: 30, color: Colors.white);
+const TextStyle h2 = TextStyle(fontSize: 30.0, color: Colors.white);
 
 const TextStyle h3 =
     TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700);
