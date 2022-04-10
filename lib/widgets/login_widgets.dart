@@ -55,7 +55,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             ),
             customTextField(
               isHidden: true,
-              contoller: usernameController,
+              contoller: passwordController,
               labelText: "Password",
             ),
             const SizedBox(
