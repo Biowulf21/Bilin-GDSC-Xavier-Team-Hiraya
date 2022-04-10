@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_colors.dart';
+import 'package:bilin/constants/constants_text_styles.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard(
@@ -33,21 +34,53 @@ class EventCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(eventName),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+              height: MediaQuery.of(context).size.height * 0.2,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(eventLocation),
+              child: Text(
+                eventName,
+                // style: cardTitle,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(volunteers.toString() + " volunteers"),
+              child: Text(
+                eventDateTime,
+                // style: cardTitle,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(donors.toString() + " donors"),
+              child: Text(
+                eventLocation,
+                style: cardTitle,
+              ),
+            ),
+            Wrap(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    volunteers.toString() + " volunteers",
+                    style: cardDesc,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    donors.toString() + " donors",
+                    style: cardDesc,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
