@@ -24,7 +24,7 @@ class CustomRoundedButton extends StatelessWidget {
   final double? width;
   final double? roundness;
   final double? textSize;
-  final TextStyle? defaultTextStyle = TextStyle(fontSize: 20);
+  final TextStyle? defaultTextStyle = const TextStyle(fontSize: 20);
   final double? borderWidth;
 
   @override
@@ -35,7 +35,7 @@ class CustomRoundedButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: height ?? 50,
-          width: width ?? 80,
+          width: width ?? 70,
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),

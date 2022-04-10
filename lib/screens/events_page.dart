@@ -1,5 +1,7 @@
 import 'package:bilin/models/event.dart';
+import 'package:bilin/services/location_service.dart';
 import 'package:bilin/widgets/event_card.dart';
+import 'package:bilin/widgets/google_maps.dart';
 import 'package:flutter/material.dart';
 
 class EventsPage extends StatefulWidget {
@@ -15,13 +17,24 @@ class _EventsPageState extends State<EventsPage> {
   List<Event> events = Event.getEvents();
 
   @override
+  void initState() {
+    super.initState();
+    _getLocation() async {
+      print(await getCurrentLocation());
+    }
+
+    _getLocation();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
       children: <Widget>[
         Container(
           color: Colors.grey,
-          height: MediaQuery.of(context).size.height * 0.5,
+          height: MediaQuery.of(context).size.height * 0.6,
+          child: getMap(),
         ),
         buildEvents(events),
       ],

@@ -1,31 +1,9 @@
-import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:bilin/screens/get_involved_page.dart';
+import 'package:bilin/screens/test.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
-
-  final Text homeText = const Text(
-    'Home',
-    style: cardDesc,
-  );
-  final Text involveText = const Text(
-    'Get Involved',
-    style: cardDesc,
-  );
-  final Text hubText = const Text(
-    'Knowledge Hub',
-    style: cardDesc,
-  );
-  final Text aboutText = const Text(
-    'About Us',
-    style: cardDesc,
-  );
-  final Text faqText = const Text(
-    'FAQ',
-    style: cardDesc,
-  );
-
   static const String id = '/dashboard';
 
   final tabs = const TabBar(
@@ -35,6 +13,9 @@ class Dashboard extends StatefulWidget {
         Tab(text: "Knowledge Hub"),
         Tab(text: "About us"),
         Tab(text: "FAQ"),
+        Tab(
+          text: 'Profile',
+        )
       ]);
 
   @override
@@ -45,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -54,9 +35,10 @@ class _DashboardState extends State<Dashboard> {
         ),
         body: const TabBarView(children: <Widget>[
           GetInvolvedPage(),
-          Text('Page3'),
+          Test(),
           Text('Page4'),
           Text('Page5'),
+          Text('Profile Tab')
         ]),
       ),
     );
