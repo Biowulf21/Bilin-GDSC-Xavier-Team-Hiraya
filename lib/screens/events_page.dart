@@ -16,10 +16,20 @@ class _EventsPageState extends State<EventsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: buildEvents(events));
+    return Scaffold(
+        body: ListView(
+      children: <Widget>[
+        Container(
+          color: Colors.grey,
+          height: MediaQuery.of(context).size.height * 0.5,
+        ),
+        buildEvents(events),
+      ],
+    ));
   }
 
   Widget buildEvents(List<Event> events) => GridView.builder(
+      shrinkWrap: true,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4,
         childAspectRatio: 1,

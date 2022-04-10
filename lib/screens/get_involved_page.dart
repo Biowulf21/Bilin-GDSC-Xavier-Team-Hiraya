@@ -1,3 +1,4 @@
+import 'package:bilin/screens/events_page.dart';
 import 'package:flutter/material.dart';
 
 class GetInvolvedPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class GetInvolvedPage extends StatefulWidget {
 class _GetInvolvedPageState extends State<GetInvolvedPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: const <Widget>[Expanded(child: EventsPage())],
+    );
   }
 }
