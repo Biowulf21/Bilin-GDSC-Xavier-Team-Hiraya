@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:bilin/models/donor.dart';
 import 'package:bilin/screens/events_page.dart';
 import 'package:bilin/services/location_service.dart';
 import 'package:geolocator/geolocator.dart';
@@ -10,6 +11,7 @@ import 'package:bilin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 import 'package:firebase_auth_web/firebase_auth_web.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class LoginWidget extends StatefulWidget {
   LoginWidget({Key? key}) : super(key: key);
@@ -338,16 +340,36 @@ class _DonorSignUpWidgetState extends State<DonorSignUpWidget> {
             HaveAccountWidget(
                 question: "Already have an account?",
                 clickableText: "Log in",
-                onTap: () {
+                onTap: () async {
                   if (_password.text == _confirmPassword.text) {
-                    FirebaseAuthWeb.instance.createUserWithEmailAndPassword(
-                        _email.text.trim(), _password.text.trim());
+                    await createDonorAccount(
+                        _fullName.text.trim(),
+                        _email.text.trim(),
+                        _phoneNumber.text.trim(),
+                        _username.text.trim());
                   }
                 })
           ],
         ),
       ),
     );
+  }
+
+  Future<void> createDonorAccount(String fullname, String email,
+      String phoneNumber, String username) async {
+    FirebaseAuthWeb.instance.createUserWithEmailAndPassword(
+        _email.text.trim(), _password.text.trim());
+
+    final doc = FirebaseFirestore.instance.collection('donors').doc();
+    final id = doc.id;
+    final donor = Donor(
+        id: id,
+        fullName: fullname,
+        email: email,
+        phoneNumber: phoneNumber,
+        username: username);
+    final json = donor.toJson();
+    await doc.set(json);
   }
 }
 
