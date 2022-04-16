@@ -248,6 +248,8 @@ class Event {
 
   final String eventName;
   final String eventDateTime;
+  //FIXME: Date should be datetime
+  // Location should be tuple with both latitude and longitude to return a location name
   final String eventLocation;
   final int donors;
   final int volunteers;
