@@ -338,7 +338,12 @@ class _DonorSignUpWidgetState extends State<DonorSignUpWidget> {
             HaveAccountWidget(
                 question: "Already have an account?",
                 clickableText: "Log in",
-                onTap: () {})
+                onTap: () {
+                  if (_password.text == _confirmPassword.text) {
+                    FirebaseAuthWeb.instance.createUserWithEmailAndPassword(
+                        _email.text.trim(), _password.text.trim());
+                  }
+                })
           ],
         ),
       ),
