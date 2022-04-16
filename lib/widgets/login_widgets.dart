@@ -1,7 +1,8 @@
 import 'dart:developer';
-
+import 'package:bilin/screens/events_page.dart';
+import 'package:bilin/services/location_service.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:bilin/constants/constants_colors.dart';
-import 'package:bilin/screens/dashboard.dart';
 import 'package:bilin/screens/signup_donor.dart';
 import 'package:bilin/screens/signup_partner.dart';
 import 'package:bilin/widgets/custom_rounded_button.dart';
@@ -10,15 +11,17 @@ import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+  LoginWidget({Key? key}) : super(key: key);
 
+  @override
+  Position? location;
+  bool? hasLocation;
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
 }
 
 class _LoginWidgetState extends State<LoginWidget> {
   TextEditingController usernameController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
 
   @override
@@ -62,9 +65,30 @@ class _LoginWidgetState extends State<LoginWidget> {
               height: 20.0,
             ),
             CustomRoundedButton(
-              onTap: () {
-                log('Loggin in');
-                Navigator.of(context).pushNamed(Dashboard.id);
+              onTap: () async {
+                try {
+                  widget.hasLocation = await checkPositionPermission();
+                  widget.location = await Geolocator.getCurrentPosition();
+                  double latitude = widget.location!.latitude;
+                  double longitude = widget.location!.longitude;
+                  print("longitude is $longitude, latitude is $latitude");
+                  if (widget.hasLocation == true) {
+                    log('Loggin in');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EventsPage(
+                          latitude: latitude,
+                          longitude: longitude,
+                        ),
+                      ),
+                    );
+                  } else {
+                    print('error');
+                  }
+                } catch (e) {
+                  print(e);
+                }
               },
               text: "Login",
               textStyle: h2.copyWith(color: Colors.white),

@@ -1,6 +1,6 @@
 import 'package:geolocator/geolocator.dart';
 
-Future<Position> getCurrentLocation() async {
+Future<bool> checkPositionPermission() async {
   bool serviceEnabled;
   LocationPermission permission;
 
@@ -24,7 +24,5 @@ Future<Position> getCurrentLocation() async {
         "Location Service is Permanently Denied. Please enabled it.");
   }
 
-  var location = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high);
-  return location;
+  return true;
 }

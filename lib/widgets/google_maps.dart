@@ -8,11 +8,11 @@ Widget getMap(double latitude, double longitude) {
 
   // ignore: undefined_prefixed_name
   ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
-    final myLatlng = LatLng(8.447268020984875, 124.64412434733933);
+    final myLatlng = LatLng(latitude, longitude);
 
     final mapOptions = MapOptions()
       ..zoom = 20
-      ..center = LatLng(8.447268020984875, 124.64412434733933);
+      ..center = LatLng(latitude, longitude);
 
     final elem = DivElement()
       ..id = htmlId
