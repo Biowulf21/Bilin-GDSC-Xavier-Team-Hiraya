@@ -1,7 +1,6 @@
 import 'package:bilin/constants/constants_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/widgets/login_widgets.dart';
-import 'package:geolocator_web/geolocator_web.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

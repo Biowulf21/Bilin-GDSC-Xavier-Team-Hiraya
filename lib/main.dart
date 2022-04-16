@@ -6,8 +6,20 @@ import 'package:bilin/screens/login_page.dart';
 import 'package:bilin/screens/signup_donor.dart';
 import 'package:bilin/screens/signup_partner.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main(List<String> args) {
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: "AIzaSyDJPYO9Qo6ORoLV4E9ThEaflElXYQqIpcQ",
+        authDomain: "bilin-346803.firebaseapp.com",
+        projectId: "bilin-346803",
+        storageBucket: "bilin-346803.appspot.com",
+        messagingSenderId: "120490219952",
+        appId: "1:120490219952:web:715be4f2d89230305e1e75",
+        measurementId: "G-7HZ3GB6X6X"),
+  );
   runApp(const Bilin());
 }
 

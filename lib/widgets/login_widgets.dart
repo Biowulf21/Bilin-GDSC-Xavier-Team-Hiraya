@@ -9,6 +9,7 @@ import 'package:bilin/widgets/custom_rounded_button.dart';
 import 'package:bilin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:bilin/constants/constants_text_styles.dart';
+import 'package:firebase_auth_web/firebase_auth_web.dart';
 
 class LoginWidget extends StatefulWidget {
   LoginWidget({Key? key}) : super(key: key);
@@ -72,8 +73,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                   double latitude = widget.location!.latitude;
                   double longitude = widget.location!.longitude;
                   print("longitude is $longitude, latitude is $latitude");
-                  if (widget.hasLocation == true) {
+                  FirebaseAuthWeb auth = FirebaseAuthWeb.instance;
+                  print(
+                      'email: ${usernameController.text.trim()} password: ${passwordController.text.trim()}');
+                  auth.signInWithEmailAndPassword(
+                      usernameController.text.trim(),
+                      passwordController.text.trim());
+                  if (widget.hasLocation == true && auth.currentUser != null) {
                     log('Loggin in');
+                    print(
+                        'username is: ${usernameController.text.toString().trim()} password is: ${passwordController.text.toString().trim()}');
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -83,8 +93,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                     );
-                  } else {
-                    print('error');
                   }
                 } catch (e) {
                   print(e);
