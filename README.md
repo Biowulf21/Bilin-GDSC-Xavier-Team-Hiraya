@@ -7,6 +7,18 @@ Bilin is a food rescue and donation platform made with flutter technology.
 2. [Technologies]
 3. [FAQs]
 
+
+# UPDATES
+Due to difficulties with the Flutter Web platform, the Team Hiraya has decided to migrate the Bilin platform to static HTML, CSS (with bootstrap) and vanilla Javascript. The backend will remain the same Firebase project.
+
+See the new repo [here](https://github.com/xxseigen/Bilin)
+
+## Additions
+1. Added more static pages, including: Knowledge Hub, Complete Landing Page and Events Page
+2. Migrated Firebase Project to new platform
+3. Changed collections and document structure in Firestore
+
+
 ### General Information
 ***
 Write down general information about your project. It is a good idea to always put a project status in the readme file. This is where you can add it. 
